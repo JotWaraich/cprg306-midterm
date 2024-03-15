@@ -7,11 +7,10 @@ const InteractivityExam = ({ list }) => {
 
   useEffect(() => {
     setWord((prevName) => prevName.toUpperCase());
-  }, []);
+  }, [word]);
 
   const handleNameChange = (event) => {
     setWord(event.target.value);
-    getWord();
   };
 
   const handleSubmit = (event) => {
@@ -20,7 +19,8 @@ const InteractivityExam = ({ list }) => {
 
   return (
     <div>
-      {word && <div>{word}</div>}
+      {/* {word && <div>{word}</div>} */}
+      {word.length > 2 && <div>{word}</div>}
       <div className="">
         <form onSubmit={handleSubmit} className="">
           <div className="p-2 bg-green-200">
